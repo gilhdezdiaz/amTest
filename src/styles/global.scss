@@ -1,5 +1,122 @@
 $base-color: #6b63b599;
+$base-color-slytherin: linear-gradient(135deg, #1c792b 0%, #82e95e 100%);
+$base-color-ravenclaw: linear-gradient(135deg, #0597b7 0%, #66d1ff 100%);
+$base-color-hufflepuff: linear-gradient(135deg, #ffc700 0%, #fff388 100%);
+$base-color-gryffindor: linear-gradient(135deg, #ff0000 0%, #fed482 100%);
+
+$background-cards: #ffff;
+$background-cards-not-alive: #cccccc;
+$border-readius: 16px;
+$font-family: Open Sans;
 
 body {
-  color: $base-color;
+  margin: 0;
+  font-family: $font-family;
+}
+
+img {
+  border-radius: 50%;
+}
+
+h5 {
+  padding: 0;
+  margin: 1px 0.4rem;
+  text-transform: capitalize;
+}
+
+.firstSection {
+  background-image: url("/public/img/imageHome.jpg");
+  background-size: auto;
+  background-position: fixed;
+}
+
+.secondSection {
+  background: #000000;
+  height: calc(50vh);
+}
+
+.card__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 100px;
+}
+
+.card {
+  flex: 0 1 calc(50% - 2em);
+  display: flex;
+  border-radius: $border-readius;
+  box-sizing: border-box;
+  margin: 1rem 0.25em;
+  width: 255px;
+  height: 235;
+}
+
+.card__image-background {
+  display: flex;
+  width: calc(100% / 3 + 30px);
+  height: auto;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  border-radius: $border-readius 0px 0px $border-readius;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__image-background-slytherin {
+  background: $base-color-slytherin;
+}
+
+.card__image-background-ravenclaw {
+  background: $base-color-ravenclaw;
+}
+
+.card__image-background-hufflepuff {
+  background: $base-color-hufflepuff;
+}
+
+.card__image-background-gryffindor {
+  background: $base-color-gryffindor;
+}
+
+.card__section-info {
+  margin-left: 1.5rem;
+}
+.card__section-title {
+  color: #9999;
+  font-size: 14px;
+  margin-top: 0.5rem;
+  line-height: 19.07px;
+  font-weight: 600;
+}
+
+.card__section-name {
+  color: #081f32;
+  font-size: 30px;
+  margin-top: 1rem;
+  line-height: 46px;
+  font-weight: 600;
+}
+
+.card__section-general_info__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+}
+.card__section-general_info__item {
+  display: flex;
+  color: #374a59;
+  font-size: 14px;
+  line-height: 27px;
+  font-weight: bold;
+}
+
+.card__alive-background {
+  background-color: $background-cards;
+}
+
+.card__not_alive-background {
+  background-color: $background-cards-not-alive;
 }

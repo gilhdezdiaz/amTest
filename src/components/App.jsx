@@ -1,8 +1,9 @@
 import React from "react";
 import "../styles/global.scss";
+import Home from "../Containers/Home";
 
 const App = () => {
-  return <h1>Bienvenido a Harry Poter App</h1>;
+  return <Home />;
 };
 
 export default App;
