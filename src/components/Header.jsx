@@ -1,6 +1,6 @@
 import React from "react";
 import mainLogo from "@img/mainIcon.svg";
-import favoriteIcon from "@icons/favoriteIcon.svg";
+import FavoriteIcon from "@icons/FavoriteIcon.js";
 import addIcon from "@icons/addIcon.svg";
 
 const Header = ({ onClick, activeButton }) => {
@@ -9,11 +9,7 @@ const Header = ({ onClick, activeButton }) => {
       <header>
         <button className="header__button header__button-favorite">
           Favoritos
-          <img
-            className="header__button-icon"
-            src={favoriteIcon}
-            alt="favoriteIcon"
-          />
+          <FavoriteIcon fill="white" />
         </button>
         <button className="header__button header__button-add">
           Agregar

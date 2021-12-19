@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import favoriteIcon from "@icons/favoriteIcon.svg";
+import FavoriteIcon from "@icons/FavoriteIcon.js";
 
 const useFetch = (url) => {
   const [data, setData] = useState(null);
@@ -63,17 +63,17 @@ const Card = ({ url }) => {
         <div
           className={`card__image-background card__image-background-${house.toLowerCase()}`}
         >
-          <img src={image} alt="Girl in a jacket" width="150" height="150" />
+          <img src={image} alt={name} width="150" height="150" />
         </div>
         <div className="card__section-info">
-          <div className="card__section-title">
-            {alive ? "VIVO" : "FINADO"}/
-            {hogwartsStudent ? "ESTUDIANTE" : "STAFF"}
-            <img
-              className="card__section-title"
-              src={favoriteIcon}
-              alt="favoriteIcon"
-            />
+          <div className="card__section-title-container">
+            <div className="card__section-title">
+              {alive ? "VIVO" : "FINADO"}/
+              {hogwartsStudent ? "ESTUDIANTE" : "STAFF"}
+            </div>
+            <div className="card__section-title-icon">
+              <FavoriteIcon fill="white" stroke="#999999" opacity=".1" />
+            </div>
           </div>
           <div className="card__section-name">{name}</div>
           <div className="card__section-general_info__container">
