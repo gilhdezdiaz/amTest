@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import favoriteIcon from "@icons/favoriteIcon.svg";
 
 const baseUrl = "http://localhost:3000";
 const url = `${baseUrl}/students`;
@@ -72,6 +73,11 @@ const Card = ({ name }) => {
             <div className="card__section-title">
               {alive ? "VIVO" : "FINADO"}/
               {hogwartsStudent ? "ESTUDIANTE" : "STAFF"}
+              <img
+                className="card__section-title"
+                src={favoriteIcon}
+                alt="favoriteIcon"
+              />
             </div>
             <div className="card__section-name">{name}</div>
             <div className="card__section-general_info__container">

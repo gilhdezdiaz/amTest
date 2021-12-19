@@ -3,6 +3,9 @@ $base-color-slytherin: linear-gradient(135deg, #1c792b 0%, #82e95e 100%);
 $base-color-ravenclaw: linear-gradient(135deg, #0597b7 0%, #66d1ff 100%);
 $base-color-hufflepuff: linear-gradient(135deg, #ffc700 0%, #fff388 100%);
 $base-color-gryffindor: linear-gradient(135deg, #ff0000 0%, #fed482 100%);
+$base-color-buttons: #6b63b5;
+$base-color-button-filter: #00000099;
+$base-color-button-filter-hover: #6b63b599;
 
 $background-cards: #ffff;
 $background-cards-not-alive: #cccccc;
@@ -10,6 +13,7 @@ $border-readius: 16px;
 $font-family: Open Sans;
 
 body {
+  background-color: #000000;
   margin: 0;
   font-family: $font-family;
 }
@@ -24,9 +28,80 @@ h5 {
   text-transform: capitalize;
 }
 
+header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 6rem;
+}
+
+.header__button {
+  background-color: $base-color-buttons;
+  color: $background-cards;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+}
+.header__button-favorite {
+  border-radius: 0px 0px 0px 10px;
+}
+.header__button-add {
+  border-radius: 0px 0px 10px 0px;
+}
+
+.header__button-icon {
+  align-self: center;
+  justify-self: center;
+}
+
+.filter__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.filter__button-container {
+  align-self: center;
+  margin-top: 2.5rem;
+}
+
+.filter__title {
+  align-self: center;
+  color: $background-cards;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 25px;
+}
+
+.filter__button {
+  background: $base-color-button-filter;
+  color: $background-cards;
+  margin: 0 4rem;
+  font-weight: 600;
+  width: 288px;
+  height: 67px;
+  text-transform: uppercase;
+  border: 4px solid #6b63b5;
+}
+
+.filter__button:hover {
+  background: $base-color-button-filter-hover;
+}
+
+.filter__icon {
+  margin: 0px 0px 2.5rem;
+  align-self: center;
+  width: 194px;
+  height: 66px;
+}
+
 .firstSection {
-  background-image: url("/public/img/imageHome.jpg");
-  background-size: auto;
+  background: url("../assets/img/imageHome.jpg") no-repeat;
+  background-size: contain;
   background-position: fixed;
 }
 
@@ -84,11 +159,15 @@ h5 {
   margin-left: 1.5rem;
 }
 .card__section-title {
+  align-self: flex-start;
   color: #9999;
   font-size: 14px;
   margin-top: 0.5rem;
   line-height: 19.07px;
   font-weight: 600;
+}
+.card__section-title-icon{
+  align-self: flex-end;
 }
 
 .card__section-name {
