@@ -3,7 +3,7 @@ import mainLogo from "@img/mainIcon.svg";
 import favoriteIcon from "@icons/favoriteIcon.svg";
 import addIcon from "@icons/addIcon.svg";
 
-const Header = () => {
+const Header = ({ onClick, activeButton }) => {
   return (
     <>
       <header>
@@ -24,8 +24,24 @@ const Header = () => {
         <img className="filter__icon" src={mainLogo} alt="mainIcon" />
         <div className="filter__title">Selecciona tu filtro</div>
         <div className="filter__button-container">
-          <button className="filter__button">Estudiantes </button>
-          <button className="filter__button">Staff </button>
+          <button
+            name="students"
+            className={`filter__button ${
+              activeButton == "students" ? "filter__button-active" : ""
+            }`}
+            onClick={onClick}
+          >
+            Estudiantes
+          </button>
+          <button
+            name="staff"
+            className={`filter__button ${
+              activeButton == "staff" ? "filter__button-active" : ""
+            }`}
+            onClick={onClick}
+          >
+            Staff
+          </button>
         </div>
       </section>
     </>
