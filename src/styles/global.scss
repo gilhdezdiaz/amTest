@@ -7,6 +7,7 @@ $base-color-buttons: #6b63b5;
 $base-color-button-filter: #00000099;
 $base-color-button-active: #6b63b5;
 $base-color-button-filter-hover: #6b63b599;
+$active-radio-button: #0e4da4;
 
 $background-cards: #ffff;
 $background-cards-not-alive: #cccccc;
@@ -17,6 +18,9 @@ body {
   background-color: #000000;
   margin: 0;
   font-family: $font-family;
+}
+* {
+  box-sizing: border-box;
 }
 
 img {
@@ -256,4 +260,136 @@ header {
 
 .card__not_alive-background {
   background-color: $background-cards-not-alive;
+}
+
+.modal {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  padding: 1rem;
+  left: 0;
+  bottom: 0;
+  left: 0;
+  background: $background-cards;
+  z-index: 10;
+  padding: 1rem;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+  background: rgba(0, 0, 0, 0.7);
+}
+.modal__dialog {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  position: relative;
+  margin: 0.5 rem;
+  width: 637px;
+  height: 546px;
+}
+
+.modal__content {
+  align-self: center;
+  justify-self: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $background-cards;
+  outline: 0;
+  border-radius: 10px;
+  width: 637px;
+  height: 546px;
+}
+
+.modal__header {
+  background: white;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modal__header-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 1.8rem;
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.8rem;
+  width: 100%;
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 2.5rem;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.inputs {
+  border: none;
+  background: rgba(38, 50, 56, 0.06);
+  border-bottom: 1px solid rgba(38, 50, 56, 0.38);
+  color: #263238;
+  padding: 0 0.5rem;
+  width: 254px;
+  height: 53px;
+  outline: none;
+}
+
+.title__inputs {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 32px;
+  letter-spacing: 0.01em;
+  margin: 0 5px;
+}
+
+.radio_button {
+  width: 20px;
+  height: 20px;
+  margin-top: 0.8rem;
+  color: $active-radio-button;
+}
+.radio-button input[type="radio"] {
+  background-color: red !important;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+}
+.form-group {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.radio-button label {
+  padding: 2px 0.5rem;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal__image-container {
+  margin-top: 1.5rem;
+  align-self: flex-start;
+  justify-self: start;
 }

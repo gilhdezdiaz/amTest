@@ -3,6 +3,7 @@ import mainLogo from "@img/mainIcon.svg";
 import { FavoriteIcon, AddPersonIcon, TrashIcon } from "@icons/icons.js";
 import { connect } from "react-redux";
 import { deleteFavorite } from "@actions/favoritesActions";
+import Modal from "@components/Modal";
 
 const PanelFavorites = ({ favorites, onClick }) => {
   if (favorites.length == 0) {
@@ -28,22 +29,26 @@ const PanelFavorites = ({ favorites, onClick }) => {
 
 const Header = ({ onClick, activeButton, favorites, deleteFavorite }) => {
   const [visible, setVisible] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const handleClickFavoriteButton = () => setVisible(!visible);
   const handleClickDeleteFavoriteButton = (name) => deleteFavorite(name);
+  const handleClickOpenModal = () => setOpenModal(true);
+  const handleClickCloseModal = () => setOpenModal(false);
   return (
     <>
       <header>
         <div className="header__button-container">
           <button
-            onClick={(e) => {
-              handleClickFavoriteButton();
-            }}
+            onClick={(e) => handleClickFavoriteButton()}
             className="header__button header__button-favorite"
           >
             Favoritos
             <FavoriteIcon fill="white" />
           </button>
-          <button className="header__button header__button-add">
+          <button
+            onClick={(e) => handleClickOpenModal()}
+            className="header__button header__button-add"
+          >
             Agregar
             <AddPersonIcon />
           </button>
@@ -81,6 +86,7 @@ const Header = ({ onClick, activeButton, favorites, deleteFavorite }) => {
           </button>
         </div>
       </section>
+      {openModal && <Modal onClick={() => handleClickCloseModal()} />}
     </>
   );
 };

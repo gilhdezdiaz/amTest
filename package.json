@@ -36,11 +36,13 @@
   },
   "dependencies": {
     "html-loader": "^3.0.1",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
+    "uid": "^2.0.0",
     "webpack-dev-server": "^4.6.0"
   }
 }
