@@ -1,20 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import mainLogo from "@img/mainIcon.svg";
-import FavoriteIcon from "@icons/FavoriteIcon.js";
-import addIcon from "@icons/addIcon.svg";
+import { FavoriteIcon, AddPersonIcon, TrashIcon } from "@icons/icons.js";
+import { connect } from "react-redux";
+import { deleteFavorite } from "@actions/favoritesActions";
 
-const Header = ({ onClick, activeButton }) => {
+const PanelFavorites = ({ favorites, onClick }) => {
+  if (favorites.length == 0) {
+    return (
+      <div className="header__favorites-panel-no-content">
+        No hay elementos seleccionados
+      </div>
+    );
+  }
+  return favorites.map(({ name, image }) => (
+    <>
+      <div className="header__favorites-panel-item">
+        <img src={image} alt={name} width="30" height="30" />
+        <h5>{name}</h5>
+        <div onClick={() => onClick(name)} style={{ cursor: "pointer" }}>
+          <TrashIcon />
+        </div>
+      </div>
+      <hr />
+    </>
+  ));
+};
+
+const Header = ({ onClick, activeButton, favorites, deleteFavorite }) => {
+  const [visible, setVisible] = useState(false);
+  const handleClickFavoriteButton = () => setVisible(!visible);
+  const handleClickDeleteFavoriteButton = (name) => deleteFavorite(name);
   return (
     <>
       <header>
-        <button className="header__button header__button-favorite">
-          Favoritos
-          <FavoriteIcon fill="white" />
-        </button>
-        <button className="header__button header__button-add">
-          Agregar
-          <img className="header__button-icon" src={addIcon} alt="addIcon" />
-        </button>
+        <div className="header__button-container">
+          <button
+            onClick={(e) => {
+              handleClickFavoriteButton();
+            }}
+            className="header__button header__button-favorite"
+          >
+            Favoritos
+            <FavoriteIcon fill="white" />
+          </button>
+          <button className="header__button header__button-add">
+            Agregar
+            <AddPersonIcon />
+          </button>
+          <div className="header__favorites-panel">
+            {visible && (
+              <PanelFavorites
+                favorites={favorites}
+                onClick={(name) => handleClickDeleteFavoriteButton(name)}
+              />
+            )}
+          </div>
+        </div>
       </header>
       <section className="filter__container">
         <img className="filter__icon" src={mainLogo} alt="mainIcon" />
@@ -44,4 +85,12 @@ const Header = ({ onClick, activeButton }) => {
   );
 };
 
-export default Header;
+const mapStateToProps = (reudcers) => {
+  return reudcers.favoritesReducer;
+};
+
+const mapDispatchToProps = {
+  deleteFavorite,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

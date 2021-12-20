@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import FavoriteIcon from "@icons/FavoriteIcon.js";
+import { FavoriteIcon } from "@icons/icons.js";
+import { setFavorites } from "@actions/favoritesActions.js";
+import { connect } from "react-redux";
 
 const useFetch = (url) => {
   const [data, setData] = useState(null);
@@ -30,8 +32,18 @@ const useFetch = (url) => {
   };
 };
 
-const Card = ({ url }) => {
+const Card = ({ url, favorites, setFavorites }) => {
   const { data, isFetching, error } = useFetch(url);
+
+  const handleClickAddFavorites = (name, image) => {
+    if (
+      !favorites.some((favorite) => favorite.name === name) &&
+      favorites.length < 5
+    ) {
+      setFavorites({ name, image });
+    }
+  };
+
   if (isFetching) {
     return "Loading...";
   }
@@ -71,8 +83,29 @@ const Card = ({ url }) => {
               {alive ? "VIVO" : "FINADO"}/
               {hogwartsStudent ? "ESTUDIANTE" : "STAFF"}
             </div>
-            <div className="card__section-title-icon">
-              <FavoriteIcon fill="white" stroke="#999999" opacity=".1" />
+            <div
+              className="card__section-title-icon"
+              onClick={(e) => {
+                handleClickAddFavorites(name, image);
+              }}
+            >
+              <FavoriteIcon
+                fill={`${
+                  favorites.some((favorite) => favorite.name === name)
+                    ? "#333333"
+                    : "white"
+                }`}
+                stroke={`${
+                  favorites.some((favorite) => favorite.name === name)
+                    ? "#333333"
+                    : "#999999"
+                }`}
+                opacity={`${
+                  favorites.some((favorite) => favorite.name === name)
+                    ? "1"
+                    : ".1"
+                }`}
+              />
             </div>
           </div>
           <div className="card__section-name">{name}</div>
@@ -96,4 +129,12 @@ const Card = ({ url }) => {
   );
 };
 
-export default Card;
+const mapDispatchToProps = {
+  setFavorites,
+};
+
+const mapStateToProps = (reudcers) => {
+  return reudcers.favoritesReducer;
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

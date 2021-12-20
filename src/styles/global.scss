@@ -29,6 +29,12 @@ h5 {
   text-transform: capitalize;
 }
 
+hr {
+  border: 1px solid #403b6d;
+  width: 92%;
+  margin-bottom: -1px;
+}
+
 header {
   display: flex;
   align-items: flex-end;
@@ -36,7 +42,13 @@ header {
   margin-right: 6rem;
 }
 
+.header__button-container {
+  display: flex;
+  width: 281px;
+}
+
 .header__button {
+  z-index: 2;
   align-items: center;
   background-color: $base-color-buttons;
   color: $background-cards;
@@ -44,9 +56,12 @@ header {
   display: flex;
   font-size: 14px;
   height: 36px;
+  width: 100%;
   justify-content: center;
   line-height: 25px;
   text-transform: uppercase;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
 }
 .header__button-favorite {
   border-radius: 0px 0px 0px 10px;
@@ -58,6 +73,33 @@ header {
 .header__button-icon {
   align-self: center;
   justify-self: center;
+}
+
+.header__favorites-panel {
+  padding-top: 36px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background: $base-color-buttons;
+  z-index: 1;
+  width: 281px;
+  border-radius: 0 0 10px 10px;
+  color: white;
+}
+
+.header__favorites-panel-item {
+  padding: 2px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  color: $background-cards;
+}
+
+.header__favorites-panel-no-content {
+  padding: 6px 10px;
+  color: $background-cards;
+  align-self: center;
 }
 
 .filter__container {
