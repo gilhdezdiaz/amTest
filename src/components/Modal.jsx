@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { CloseIcon } from "@icons/icons.js";
+import { CloseIcon } from "../assets/icons/icons";
 import moment from "moment";
 import { uid } from "uid";
 
@@ -33,17 +33,11 @@ const Modal = ({ onClick }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }).then(
-      onClick
-    );
+    }).then(onClick);
   };
 
   return (
-    <div
-      className="modal"
-      tabIndex="-1"
-      role="dialog"
-    >
+    <div className="modal" tabIndex="-1" role="dialog">
       <div className="modal__dialog" role="document">
         <div className="modal__content">
           <div className="modal__header">

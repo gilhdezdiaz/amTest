@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import mainLogo from "@img/mainIcon.svg";
-import { FavoriteIcon, AddPersonIcon, TrashIcon } from "@icons/icons.js";
+import mainLogo from "../assets/img/mainIcon.svg";
+import { FavoriteIcon, AddPersonIcon, TrashIcon } from "../assets/icons/icons";
 import { connect } from "react-redux";
-import { deleteFavorite } from "@actions/favoritesActions";
-import Modal from "@components/Modal";
+import { deleteFavorite } from "../actions/favoritesActions";
+import Modal from "./Modal";
 
 const PanelFavorites = ({ favorites, onClick }) => {
   if (favorites.length == 0) {

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -24,9 +24,13 @@
     "@babel/plugin-transform-runtime": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.4.0",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.0.5",
     "mini-css-extract-plugin": "^2.4.2",
     "sass": "^1.45.0",
     "sass-loader": "^12.4.0",
@@ -44,5 +48,14 @@
     "redux-devtools-extension": "^2.13.9",
     "uid": "^2.0.0",
     "webpack-dev-server": "^4.6.0"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__test__/setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "\\.svg": "<rootDir>/src/__mocks__/svgrMock.js"
+    }
   }
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { FavoriteIcon } from "@icons/icons.js";
-import { setFavorites } from "@actions/favoritesActions.js";
+import { FavoriteIcon } from "../assets/icons/icons";
+import { setFavorites } from "../actions/favoritesActions";
 import { connect } from "react-redux";
 
 const useFetch = (url) => {
@@ -73,7 +73,9 @@ const Card = ({ url, favorites, setFavorites }) => {
         }`}
       >
         <div
-          className={`card__image-background card__image-background-${house && house.toLowerCase()}`}
+          className={`card__image-background card__image-background-${
+            house && house.toLowerCase()
+          }`}
         >
           <img src={image} alt={name} width="150" height="150" />
         </div>
