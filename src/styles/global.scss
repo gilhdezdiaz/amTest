@@ -1,8 +1,13 @@
+@import "mobile.scss";
+
 $base-color: #6b63b599;
 $base-color-slytherin: linear-gradient(135deg, #1c792b 0%, #82e95e 100%);
 $base-color-ravenclaw: linear-gradient(135deg, #0597b7 0%, #66d1ff 100%);
 $base-color-hufflepuff: linear-gradient(135deg, #ffc700 0%, #fff388 100%);
 $base-color-gryffindor: linear-gradient(135deg, #ff0000 0%, #fed482 100%);
+
+
+
 $base-color-buttons: #6b63b5;
 $base-color-button-filter: #00000099;
 $base-color-button-active: #6b63b5;
@@ -171,19 +176,17 @@ header {
 }
 
 .card {
-  flex: 0 1 calc(50% - 2em);
+  flex: 0 1 48%;
   display: flex;
   border-radius: $border-readius;
   box-sizing: border-box;
   margin: 1rem 0.25em;
-  width: 255px;
   height: 235;
 }
 
 .card__image-background {
   display: flex;
-  width: calc(100% / 3 + 30px);
-  height: auto;
+  width: 35%; //calc(100% / 3 + 30px);
   left: 0px;
   top: 0px;
   bottom: 0px;
@@ -212,11 +215,11 @@ header {
   display: flex;
   flex-direction: column;
   margin-left: 1.5rem;
-  width: 53%;
+  width: 65%;
 }
 .card__section-title-container {
   display: flex;
-  margin-top: 0.7rem;
+  margin: 0.7rem 1rem 0 0;
   justify-content: space-between;
 }
 .card__section-title {

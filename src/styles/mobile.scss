@@ -1,5 +1,87 @@
-$breakpoints: (
-  phone: 640px,
-  tablet: 768px,
-  desktop: 1024px,
-) !default;
+$gryffindor-color: linear-gradient(358.61deg, #ff0000 4.67%, #fed482 96.97%);
+
+@media only screen and (max-width: 880px) {
+  .filter__container {
+    margin-top: 2rem !important;
+  }
+  .filter__button-container {
+    width: calc(100vh - 10%) !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+  }
+
+  .filter__button {
+    height: 43px !important;
+    width: 170px !important;
+    margin: 0 0.5rem !important;
+  }
+  .firstSection {
+    background: black !important;
+  }
+  .card__container {
+    padding: 30px 10px !important;
+  }
+
+  .card {
+    flex-direction: column !important;
+  }
+  .card__section-title-container {
+    margin: 0.7rem 0.5rem 0.3rem 0 !important;
+    order: 3;
+  }
+  .card__section-general_info__container {
+    display: none !important;
+  }
+  .card__section-name {
+    font-size: 18px !important;
+    order: 2;
+  }
+  .card__image-background > img {
+    align-items: center !important;
+    width: 100px;
+    height: 100px;
+  }
+
+  .card__image-background {
+    border-radius: 16px 16px 0px 0px !important;
+    width: auto !important;
+    height: 120px;
+  }
+
+  .card__section-info {
+    width: 85% !important;
+  }
+  .card__section-title {
+    font-size: 11px !important;
+    display: block !important;
+  }
+
+  .modal__content {
+    width: calc(100% - 0.3em) !important;
+    padding: 1rem !important;
+    min-height: 730px;
+  }
+  .modal__dialog {
+    width: calc(100% - 0.3rem) !important;
+  }
+  .modal__header-title {
+    margin: 0 !important;
+  }
+  .modal__body {
+    margin: 0 !important;
+  }
+  .form {
+    width: 100% !important;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .column {
+    width: 100% !important;
+  }
+
+  .inputs{
+      width: 100% !important;
+  }
+}
