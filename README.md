@@ -4,7 +4,8 @@ Prueba para front end developer
 
 ## Demo de la aplicación
 
-[app]:[https://competent-hugle-8df6ec.netlify.app/]
+[app]: https://competent-hugle-8df6ec.netlify.app/
+
 En el siguiente [link][app] se encuentra desplegada la aplicación.
 
 ## Servidor API
