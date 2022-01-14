@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Card from "@components/Card";
+// import Card from "@components/Card";
 import Header from "@components/Header";
+import CardClass from "../components/CardClass";
 
 const baseUrl = "http://localhost:3000";
 
@@ -20,7 +21,7 @@ const Home = () => {
         activeButton={activeButton}
       />
       <div className="card__container">
-        <Card url={url} />
+        <CardClass url={url} />
       </div>
     </div>
   );
