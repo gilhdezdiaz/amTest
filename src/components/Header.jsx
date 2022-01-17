@@ -37,28 +37,30 @@ const Header = ({ onClick, activeButton, favorites, deleteFavorite }) => {
   return (
     <>
       <header>
-        <div className="header__button-container">
-          <button
-            onClick={(e) => handleClickFavoriteButton()}
-            className="header__button header__button-favorite"
-          >
-            Favoritos
-            <FavoriteIcon fill="white" />
-          </button>
-          <button
-            onClick={(e) => handleClickOpenModal()}
-            className="header__button header__button-add"
-          >
-            Agregar
-            <AddPersonIcon />
-          </button>
-          <div className="header__favorites-panel">
-            {visible && (
-              <PanelFavorites
-                favorites={favorites}
-                onClick={(name) => handleClickDeleteFavoriteButton(name)}
-              />
-            )}
+        <div className="header-container">
+          <div className="header__button-container">
+            <button
+              onClick={(e) => handleClickFavoriteButton()}
+              className="header__button header__button-favorite"
+            >
+              Favoritos
+              <FavoriteIcon fill="white" />
+            </button>
+            <button
+              onClick={(e) => handleClickOpenModal()}
+              className="header__button header__button-add"
+            >
+              Agregar
+              <AddPersonIcon />
+            </button>
+            <div className="header__favorites-panel">
+              {visible && (
+                <PanelFavorites
+                  favorites={favorites}
+                  onClick={(name) => handleClickDeleteFavoriteButton(name)}
+                />
+              )}
+            </div>
           </div>
         </div>
       </header>
