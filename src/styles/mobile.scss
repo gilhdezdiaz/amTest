@@ -1,6 +1,45 @@
 $gryffindor-color: linear-gradient(358.61deg, #ff0000 4.67%, #fed482 96.97%);
 
 @media only screen and (max-width: 880px) {
+  .header-container {
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    transform: rotate(180deg);
+  }
+  .header__button-container {
+    width: 281px;
+  }
+  .header__button-favorite {
+    order: 2;
+    border-radius: 10px 0px 0px 0px !important;
+    box-shadow: 0px -4px 4px rgb(0 0 0 / 25%) !important;
+    transform: rotate(180deg);
+  }
+  .header__button-add {
+    order: 1;
+    border-radius: 0px 10px 0px 0px !important;
+    box-shadow: 0px -4px 4px rgb(0 0 0 / 25%) !important;
+    transform: rotate(180deg);
+  }
+  .header__favorites-panel {
+    border-radius: 0px !important;
+  }
+  .header__favorites-panel:empty {
+  background: transparent;
+}
+  .header__favorites-panel-item {
+    transform: rotate(180deg);
+  }
+
+  .header__favorites-panel-no-content {
+    transform: rotate(180deg);
+  }
+
   .filter__container {
     margin-top: 2rem !important;
   }
@@ -18,12 +57,16 @@ $gryffindor-color: linear-gradient(358.61deg, #ff0000 4.67%, #fed482 96.97%);
   }
   .firstSection {
     background: black !important;
+    overflow: hidden;
   }
   .card__container {
     padding: 30px 10px !important;
+    overflow-x: scroll;
+    height: 60%;
   }
 
   .card {
+    flex: 0 1 47% !important;
     flex-direction: column !important;
   }
   .card__section-title-container {
@@ -81,7 +124,7 @@ $gryffindor-color: linear-gradient(358.61deg, #ff0000 4.67%, #fed482 96.97%);
     width: 100% !important;
   }
 
-  .inputs{
-      width: 100% !important;
+  .inputs {
+    width: 100% !important;
   }
 }
